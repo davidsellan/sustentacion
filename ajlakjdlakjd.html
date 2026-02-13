@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividades para Niños con Disgrafía</title>
+
+<style>
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f5faff;
+margin: 0;
+padding: 0;
+}
+
+header {
+background-color: #4c92ff;
+color: white;
+padding: 20px;
+text-align: center;
+}
+
+nav {
+background-color: #dce9ff;
+padding: 15px;
+text-align: center;
+}
+
+nav a {
+margin: 0 15px;
+color: #003c84;
+font-weight: bold;
+text-decoration: none;
+}
+
+section {
+padding: 25px;
+max-width: 1000px;
+margin: auto;
+}
+
+h2 {
+color: #003c84;
+}
+
+.actividad {
+background-color: #ffffff;
+padding: 20px;
+margin-bottom: 20px;
+border-left: 5px solid #4c92ff;
+border-radius: 5px;
+box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+img {
+width: 100%;
+max-width: 400px;
+border-radius: 10px;
+margin-top: 10px;
+}
+
+button {
+padding: 8px 15px;
+margin: 5px;
+border: none;
+border-radius: 5px;
+background-color: #4c92ff;
+color: white;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #2f6edb;
+}
+
+.letra-punteada {
+font-size: 60px;
+letter-spacing: 10px;
+color: #4c92ff;
+font-weight: bold;
+}
+
+.puntaje {
+font-size: 18px;
+font-weight: bold;
+color: #003c84;
+margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Actividades para Niños con Disgrafía</h1>
+<p>Recursos prácticos para mejorar la escritura y motricidad fina</p>
+</header>
+
+<nav>
+<a href="#que-es">¿Qué es la disgrafía?</a>
+<a href="#actividades-final">Actividades</a>
+<a href="#recomendaciones">Recomendaciones</a>
+</nav>
+
+<section id="que-es">
+<h2>¿Qué es la disgrafía?</h2>
+<p>
+La disgrafía es una dificultad del aprendizaje que afecta la capacidad de escribir correctamente y de manera fluida.
+No está relacionada con la inteligencia, sino con la motricidad fina, la coordinación y el procesamiento del lenguaje escrito.
+Es una afección neurológica en la que una persona tiene dificultad para traducir sus pensamientos al lenguaje escrito,
+considerando su edad y capacidad de razonamiento, a pesar de haber recibido instrucción adecuada.
+</p>
+
+<h2>¿Cuáles son los signos de la disgrafía?</h2>
+<p>
+Dificultad en la formación y legibilidad de letras, tamaño y espaciado, ortografía,
+coordinación motora fina, velocidad de escritura, gramática y composición.
+</p>
+</section>
+
+<section id="actividades">
+<h2>Actividades recomendadas</h2>
+
+<div class="actividad">
+<h3>1. Trazado de líneas y figuras</h3>
+<p>Mejora la motricidad fina y coordinación mano-ojo.</p>
+</div>
+
+<div class="actividad">
+<h3>2. Uso de letras móviles</h3>
+<p>Permite formar palabras sin la presión de escribir manualmente.</p>
+</div>
+
+<div class="actividad">
+<h3>3. Actividades con plastilina</h3>
+<p>Fortalece músculos de las manos y refuerza la forma de las letras.</p>
+</div>
+
+<div class="actividad">
+<h3>4. Caligrafía guiada</h3>
+<p>Mejora la formación de letras mediante práctica estructurada.</p>
+</div>
+
+<div class="actividad">
+<h3>5. Juegos de coordinación ojo-mano</h3>
+<p>Actividades como laberintos y unir puntos fortalecen la precisión.</p>
+</div>
+</section>
+
+<section id="recomendaciones">
+<h2>Recomendaciones generales</h2>
+<ul>
+<li>Motivar siempre y evitar correcciones duras.</li>
+<li>Permitir descansos cortos.</li>
+<li>Usar lápices ergonómicos.</li>
+<li>Sesiones cortas y constantes.</li>
+<li>Refuerzos positivos ante avances.</li>
+</ul>
+</section>
+
+<!-- SECCIÓN FINAL (JUEGOS) -->
+<section id="actividades-final">
+<h2>Zona de Actividades Interactivas</h2>
+
+<p class="puntaje">Puntos: <span id="puntos">0</span></p>
+
+<h3>Selecciona Nivel</h3>
+<button onclick="cambiarNivel('facil')">Fácil</button>
+<button onclick="cambiarNivel('medio')">Medio</button>
+<button onclick="cambiarNivel('dificil')">Difícil</button>
+<p>Nivel actual: <strong id="nivelActual">Fácil</strong></p>
+
+<hr>
+
+<h3>Escribe lo que ves</h3>
+<img id="imagenActividad">
+<p id="palabraImagen"></p>
+<input type="text" id="respuestaImagen">
+<br>
+<button onclick="verificarImagen()">Verificar</button>
+<button onclick="nuevaImagen()">Nueva Imagen</button>
+<button onclick="limpiarCampo('respuestaImagen','feedbackImagen')">Limpiar</button>
+<p id="feedbackImagen"></p>
+
+<hr>
+
+<h3>Repasa la letra</h3>
+<div class="letra-punteada" id="letraMostrar"></div>
+<input type="text" id="respuestaLetra" placeholder="Escribe la letra 3 veces">
+<br>
+<button onclick="verificarLetra()">Verificar</button>
+<button onclick="nuevaLetra()">Nueva Letra</button>
+<button onclick="limpiarCampo('respuestaLetra','feedbackLetra')">Limpiar</button>
+<p id="feedbackLetra"></p>
+
+</section>
+
+<script>
+let puntos = 0;
+let nivel = "facil";
+
+let datos = {
+facil:[
+{palabra:"perro", img:"https://cdn-icons-png.flaticon.com/512/616/616408.png"},
+{palabra:"gato", img:"https://cdn-icons-png.flaticon.com/512/616/616430.png"}
+],
+medio:[
+{palabra:"mariposa", img:"https://cdn-icons-png.flaticon.com/512/616/616430.png"},
+{palabra:"conejo", img:"https://cdn-icons-png.flaticon.com/512/616/616554.png"}
+],
+dificil:[
+{palabra:"elefante", img:"https://cdn-icons-png.flaticon.com/512/1998/1998627.png"},
+{palabra:"hipopotamo", img:"https://cdn-icons-png.flaticon.com/512/616/616408.png"}
+]
+};
+
+let letras = ["A","M","P","E","L","S"];
+
+function iniciar(){
+cambiarNivel("facil");
+nuevaLetra();
+}
+
+function sumarPunto(){
+puntos++;
+document.getElementById("puntos").innerText = puntos;
+}
+
+function cambiarNivel(n){
+nivel = n;
+document.getElementById("nivelActual").innerText = n.charAt(0).toUpperCase()+n.slice(1);
+nuevaImagen();
+nuevaLetra();
+}
+
+function nuevaImagen(){
+let lista = datos[nivel];
+let random = lista[Math.floor(Math.random()*lista.length)];
+document.getElementById("imagenActividad").src = random.img;
+document.getElementById("palabraImagen").innerText = random.palabra;
+document.getElementById("respuestaImagen").value="";
+document.getElementById("feedbackImagen").innerHTML="";
+}
+
+function verificarImagen(){
+let r = document.getElementById("respuestaImagen").value.toLowerCase();
+let correcta = document.getElementById("palabraImagen").innerText;
+
+if(r===correcta){
+document.getElementById("feedbackImagen").innerHTML="Correcto";
+document.getElementById("feedbackImagen").style.color="green";
+sumarPunto();
+}else{
+document.getElementById("feedbackImagen").innerHTML="Incorrecto";
+document.getElementById("feedbackImagen").style.color="red";
+}
+}
+
+function nuevaLetra(){
+let random = letras[Math.floor(Math.random()*letras.length)];
+document.getElementById("letraMostrar").innerText=random;
+document.getElementById("respuestaLetra").value="";
+document.getElementById("feedbackLetra").innerHTML="";
+}
+
+function verificarLetra(){
+let r = document.getElementById("respuestaLetra").value;
+let letra = document.getElementById("letraMostrar").innerText;
+
+if(r===letra.repeat(3) || r===letra.toLowerCase().repeat(3)){
+document.getElementById("feedbackLetra").innerHTML="Muy bien";
+document.getElementById("feedbackLetra").style.color="green";
+sumarPunto();
+}else{
+document.getElementById("feedbackLetra").innerHTML="Escribe la letra 3 veces";
+document.getElementById("feedbackLetra").style.color="red";
+}
+}
+
+function limpiarCampo(input,feedback){
+document.getElementById(input).value="";
+document.getElementById(feedback).innerHTML="";
+}
+
+iniciar();
+</script>
+
+</body>
+</html>
